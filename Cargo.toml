@@ -6,3 +6,12 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+serde=""
+serde_json=""
+serde_derive=""
+bson="^2.0.0-beta.2"
+
+[dependencies.mongodb]
+version="^2.0.0-beta.2"
+default-features=false
+features=["sync"]
