@@ -10,6 +10,7 @@ serde=""
 serde_json=""
 serde_derive=""
 bson="^2.0.0-beta.2"
+dotenv=""
 
 [dependencies.mongodb]
 version="^2.0.0-beta.2"

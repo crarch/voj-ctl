@@ -10,8 +10,7 @@ fn main(){
         
     
     let args:Vec<String>=std::env::args().collect();
-    let path1=Path::new("/home/hilaolu/Project/voj_ctl/questions");
-    
+    let path1=Path::new(&args[1]);    
     let questions=path1.read_dir().unwrap();
     
     
