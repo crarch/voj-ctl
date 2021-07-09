@@ -15,7 +15,7 @@ fn main(){
     
     
     let database=get_mongo_database();
-    let collection=database.collection::<Document>("questions");
+    let collection=database.collection::<Document>("testbenches");
     
     
     
@@ -24,6 +24,9 @@ fn main(){
         
         let question_id=question_ids.unwrap();
         let question_id_int=question_id.path().clone().file_name().unwrap().to_owned().into_string().unwrap();
+        if(question_id_int.starts_with(".git")){
+            continue;
+        }
         let question_id_int:u32=question_id_int.parse::<u32>().unwrap();
         
         let mut test_bench:Document=Document::new();
@@ -32,6 +35,8 @@ fn main(){
         for test_bench_file in question_id{
             let test_bench_path=test_bench_file.unwrap().path();
             let test_bench_name=test_bench_path.clone().file_name().unwrap().to_owned().into_string().unwrap();
+            let len=test_bench_name.len();
+            let test_bench_name=&(test_bench_name)[..len-2].to_string();
             let contents=fs::read_to_string(test_bench_path).unwrap();
             test_bench.insert(test_bench_name,contents);
         }
