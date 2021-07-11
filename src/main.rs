@@ -88,7 +88,6 @@ fn add_user(user_data_file:&str){
                 "_id":user_id,
                 "user_email":user_email,
                 "user_password":hash,
-                "pass":pass,
             };
             
             
