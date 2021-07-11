@@ -11,6 +11,7 @@ serde_json=""
 serde_derive=""
 bson="^2.0.0-beta.2"
 dotenv=""
+rust-argon2="^0.8"
 
 [dependencies.mongodb]
 version="^2.0.0-beta.2"
