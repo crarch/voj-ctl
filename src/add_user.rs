@@ -1,6 +1,6 @@
-use std::fs;
+
 use std::fs::File;
-use std::path::Path;
+
 use bson;
 use mongodb::bson::doc;
 use bson::document::Document;
@@ -35,7 +35,7 @@ pub fn add_user(user_data_file:&str){
             
             let hash=argon2::hash_encoded(user_password.as_bytes(),salt.as_bytes(),&config).unwrap();
             
-            let pass:Vec<u32>=Vec::new();
+            let _pass:Vec<u32>=Vec::new();
             
             let new_user=doc!{
                 "_id":user_id,

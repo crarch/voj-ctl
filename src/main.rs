@@ -1,10 +1,10 @@
-use std::fs;
-use std::fs::File;
-use std::path::Path;
-use bson;
-use mongodb::bson::doc;
-use bson::document::Document;
-use std::io::{self,BufRead};
+
+
+
+
+
+
+
 
 
 mod utils;
@@ -21,9 +21,9 @@ fn main(){
     
     let args:Vec<String>=std::env::args().collect();
     
-    if(args[1]=="q"){
+    if args[1]=="q" {
         add_testbench(&args[2]);
-    }else if(args[2]=="u"){
+    }else if args[2]=="u" {
         add_user(&args[2]);
     }
     

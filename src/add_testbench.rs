@@ -1,14 +1,14 @@
 use std::fs;
-use std::fs::File;
+
 use std::path::Path;
 use bson;
 use mongodb::bson::doc;
 use bson::document::Document;
-use std::io::{self,BufRead};
+
 
 
 use crate::get_mongo_database;
-use crate::get_env;
+
 use crate::get_unix_timestamp;
 
 pub fn add_testbench(question_folder:&str){
@@ -22,7 +22,7 @@ pub fn add_testbench(question_folder:&str){
 
         let question_id=question_ids.unwrap();
         let question_id_int=question_id.path().clone().file_name().unwrap().to_owned().into_string().unwrap();
-        if(question_id_int.starts_with(".git")){
+        if question_id_int.starts_with(".git") {
             continue;
         }
         let question_id_int:u32=question_id_int.parse::<u32>().unwrap();
