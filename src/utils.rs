@@ -9,6 +9,16 @@ pub fn get_unix_timestamp()->u32{
         
 }
 
+pub fn get_unix_timestamp_mills()->u64{
+    let result=SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .expect("Time went backwards")
+        .as_millis() as u64;
+    
+    result
+        
+}
+
 use dotenv;
 
 pub fn get_env(env_name:&str)->String{
