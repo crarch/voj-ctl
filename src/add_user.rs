@@ -38,14 +38,14 @@ pub fn add_user(user_data_file:&str){
             let _pass:Vec<u32>=Vec::new();
             
             let new_user=doc!{
-                "_id":user_id,
+                "user_id":user_id,
                 "user_email":user_email,
                 "user_password":hash,
             };
             
             
             collection.update_one(
-                doc!{"_id":user_id},
+                doc!{"user_id":user_id},
                 doc!{
                     "$set":new_user
                 },
