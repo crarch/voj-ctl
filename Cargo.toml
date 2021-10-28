@@ -6,11 +6,11 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-serde=""
-serde_json=""
-serde_derive=""
+serde="*"
+serde_json="*"
+serde_derive="*"
 bson="^2.0.0-beta.2"
-dotenv=""
+dotenv="*"
 rust-argon2="^0.8"
 
 [dependencies.mongodb]
