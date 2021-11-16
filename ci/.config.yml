@@ -17,3 +17,4 @@ steps:
       - target/release/voj-ctl
   when:
     event: tag
+    
